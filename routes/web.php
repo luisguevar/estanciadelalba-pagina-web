@@ -29,3 +29,7 @@ Route::get('/contactanos', [ContactanosController::class, 'index']);
 Route::get('/reclamaciones', [LibroReclamacionController::class, 'index']);
 /* Route::get('/culqi', [CulqiControllerr::class, 'index']); */
 // Route::view('/', 'mantenimiento');
+
+Route::get('/popup-close', function () {
+    session(['popup_closed' => true]);
+})->name('popup.close');

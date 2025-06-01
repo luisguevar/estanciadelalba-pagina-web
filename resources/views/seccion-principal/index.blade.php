@@ -147,8 +147,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="about__image" data-aos="fade-up-left" data-aos-duration="1000" data-aos-delay="100">
-                            <div class="about__image-lg"><img style="border-radius: 10px;" src="assets/images/room/pagina-web/main-3.png"
-                                    alt="About image"></div>
+                            <div class="about__image-lg"><img style="border-radius: 10px;"
+                                    src="assets/images/room/pagina-web/main-3.png" alt="About image"></div>
                             {{--   <div class="about__image-sm"><img src="assets/images/room/pagina-web/main-2.png"
                                     alt="About image"></div> --}}
                         </div>
@@ -779,6 +779,58 @@
 
 
     <!-- ========== Blog Section ends Here========== -->
+    <div id="promo-popup"
+        style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* oculto inicialmente */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+">
+        <div style="position: relative;">
+            <img src="assets/images/oferta-papa.png" alt="Oferta especial"
+                style="
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #000;
+    ">
+            <button onclick="closePopup()"
+                style="
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #C09B6C;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        cursor: pointer;
+    ">×</button>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar el popup después de 2 segundos
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('promo-popup').style.display = 'flex';
+            }, 1000); // 1000 milisegundos = 1 segundo
+        });
+
+        function closePopup() {
+            document.getElementById('promo-popup').style.display = 'none';
+
+            // Llamar a la ruta para guardar en sesión que el popup fue cerrado
+            fetch("{{ route('popup.close') }}");
+        }
+    </script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
