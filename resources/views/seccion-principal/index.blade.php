@@ -779,7 +779,7 @@
 
 
     <!-- ========== Blog Section ends Here========== -->
-    <div id="promo-popup"
+    {{-- <div id="promo-popup"
         style="
     position: fixed;
     top: 0; left: 0;
@@ -813,9 +813,9 @@
         cursor: pointer;
     ">×</button>
         </div>
-    </div>
+    </div> --}}
 
-    <script>
+    {{-- <script>
         // Mostrar el popup después de 2 segundos
         window.addEventListener('load', () => {
             setTimeout(() => {
@@ -829,7 +829,7 @@
             // Llamar a la ruta para guardar en sesión que el popup fue cerrado
             fetch("{{ route('popup.close') }}");
         }
-    </script>
+    </script> --}}
 
 
     <script>
